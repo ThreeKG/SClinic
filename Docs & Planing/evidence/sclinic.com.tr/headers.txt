@@ -1,0 +1,12 @@
+HTTP/2 200 
+server: nginx
+date: Tue, 14 Jul 2026 08:38:13 GMT
+content-type: text/html; charset=UTF-8
+x-powered-by: PHP/7.4.33
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+set-cookie: PHPSESSID=0o5k8r31dm5h0ha8kg1gklqgas; path=/
+set-cookie: PHPSESSID=0o5k8r31dm5h0ha8kg1gklqgas; SameSite=None; Secure
+x-powered-by: PleskLin
+

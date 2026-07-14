@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr"><!-- sc-v3 -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    
+
+    
+
+    <!-------------Mobil ve mini cihazlar için ------------------->
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, height=device-height, width=device-width" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-------------Mobil ve mini cihazlar için ------------------->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <base href="https://www.sclinic.ae/">
+    <link href="https://www.sclinic.ae/kutuphane/aliaygir.css?v=1.28" rel="stylesheet" type="text/css" />
+    <link href="https://www.sclinic.ae/sistem/app/icons.css?v=1.28" rel="stylesheet" type="text/css" />
+    <link href="https://www.sclinic.ae/sistem/app/animate.css?v=1.28" rel="stylesheet" type="text/css" />
+
+
+    <link href="_dir/clinic/tasarim/style.css?v=1.28" rel="stylesheet" type="text/css" />
+    <link href="_dir/clinic/js/olw-3/assets/owl.carousel.css?v=1.28" rel="stylesheet" type="text/css" />
+    <link href="_dir/clinic/resimler/20240810112115.png" rel="icon" type="image/x-icon" />
+    <script src="_dir/clinic/js/jquery-1.7.1.min.js"></script>
+    <style>
+    /* Temporarily hidden: price, cart, shipping */
+    .urun .fiyat { display: none !important; }
+    .pd-kargo-section, .pd-action-box { display: none !important; }
+
+ 
+
+    /* Task 1: Our Process — Book Your Consultation button */
+    #scroll a[href*="information-appointment"] {
+        display: inline-block;
+        background: #d6b187;
+        color: #3b3331 !important;
+        padding: 14px 36px;
+        border-radius: 10px;
+        text-decoration: none !important;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        transition: background 0.25s;
+    }
+    #scroll a[href*="information-appointment"]:hover { background: #c9a882; }
+
+    /* Task 2: Footer — Login gizle */
+    .footer-logo-x .buton-beyaz { display: none !important; }
+
+    /* Task 5: Header — Sepet ikonu gizle */
+    a[onclick*="toggleMiniCart"] { display: none !important; }
+
+    /* Slides 5 & 8: CTA button visibility */
+    .tema-A .article-xs a,
+    .tema-E .article-xs a {
+        display: inline-block;
+        background: #d6b187;
+        color: #3b3331 !important;
+        padding: 14px 36px;
+        border-radius: 10px;
+        text-decoration: none !important;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-top: 22px;
+        transition: background 0.25s;
+    }
+    .tema-A .article-xs a:hover,
+    .tema-E .article-xs a:hover { background: #c9a882; }
+
+    /* Slide 12: Hide footer items marked delete */
+    .footer-logo-x li:has(a[href="kargo-ve-tasima-bilgileri"]),
+    .footer-logo-x li:has(a[href="uyelik-sozlesmesi"]),
+    .footer-logo-x a[href="kargo-ve-tasima-bilgileri"],
+    .footer-logo-x a[href="uyelik-sozlesmesi"] { display: none !important; }
+
+    /* Task: Footer — hide only the social icons under the address (enalt), leave
+       header icons and the "FOLLOW US" footer icons untouched */
+    .enalt .footer-social { display: none !important; }
+    </style>
+
+    
+    
+    
+
+
+
+
+
+            <title>S&#039;Clinic | Non-Surgical Hair Restoration &amp; Skin Care | Dubai</title>
+    <meta name="keywords" content="hair restoration, non-surgical hair loss treatment, regenerative hair therapy, hair loss clinic Istanbul, S Clinic, biopeptide hair treatment, skin rejuvenation, hair transplant alternative" />
+    <meta name="description" content="S&#039;Clinic offers patented regenerative hair restoration without transplantation. Clinically proven biopeptide treatments for hair loss and skin care. Istanbul clinics." />
+
+
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="S&#039;Clinic">
+    <meta property="og:title" content="S&#039;Clinic | Non-Surgical Hair Restoration &amp; Skin Care | Dubai" />
+    <meta property="og:description" content="S&#039;Clinic offers patented regenerative hair restoration without transplantation. Clinically proven biopeptide treatments for hair loss and skin care. Istanbul clinics." />
+    <meta property="og:url" content="//www.sclinic.ae/" />
+    <meta property="og:locale" content="en-GB">
+    <meta property="og:image" content="https://www.sclinic.ae/_dir/clinic/resimler/s-clinic_anasayfa-2026-06-26-121128-94.jpg?v=1.28">
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@S&#039;Clinic">
+    <meta name="twitter:title" content="S&#039;Clinic | Non-Surgical Hair Restoration &amp; Skin Care | Dubai">
+    <meta name="twitter:url" content="//www.sclinic.ae/">
+    <meta name="twitter:description" content="S&#039;Clinic offers patented regenerative hair restoration without transplantation. Clinically proven biopeptide treatments for hair loss and skin care. Istanbul clinics.">
+    <meta name="twitter:image" content="https://www.sclinic.ae/_dir/clinic/resimler/s-clinic_anasayfa-2026-06-26-121128-94.jpg?v=1.28">
+
+
+
+
+
+    
+
+
+    
+
+    
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "İstanbul, Türkiye",
+                    "postalCode": "34394",
+                    "streetAddress": "Hakkı Yeten Cad Fulya Terrace Center 1 Blok Kat 16 Daire 93 Şişli / Fulya"
+                },
+                "image": "https://www.sclinic.ae/_dir/clinic/resimler/s-clinic_anasayfa-2026-06-26-121128-94.jpg",
+                "email": "info@sclinic.com.tr",
+                "faxNumber": "0 212 215 52 53",
+                "member": [{
+                    "@type": "Organization"
+                }],
+
+                "name": "S Clinic",
+                "telephone": "0 212 215 52 53"
+            }
+        </script>
+
+    
+
+
+
+
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MTXBM4C4');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+
+
+
+</head>
+
+<body class=" ">
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTXBM4C4"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLRKRM588P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BLRKRM588P');
+    </script>
+
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2602555913479546');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2602555913479546&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+    
+
+
+
+
+    <header>
+
+
+
+        <div class="sc-usermenu sc-social t-right">
+            <a target="_blank" href="https://www.instagram.com/sclinicuae/" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a target="_blank" href="https://www.facebook.com/sclinicuae" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/company/sclinicuae/" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+
+
+
+        <div class="sc-header">
+            <a href="./">
+                <img src="_dir/clinic/resimler/20260315030552.svg" alt="Logo" class="logo">
+            </a>
+        </div>
+
+
+
+        <div class="sc-menu">
+            <div>
+
+            
+                            <a class="link" href="s-clinic-ea">
+                    ABOUT US                </a>
+                            <a class="link" href="our-scientific-approach">
+                    OUR SCIENTIFIC APPROACH                </a>
+                            <a class="link" href="our-process">
+                    OUR PROCESS                </a>
+                            <a class="link" href="locations">
+                    LOCATIONS                </a>
+                        </div>
+        </div>
+
+
+
+
+    </header>
+
+
+
+
+    <div class="siteara none ">
+        <div class="sitearama">
+
+            <div>
+                <div class="tam-ara">
+                    <div class="kapat" onclick="_fadeOut('siteara','500')"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    <h2>SEARCH</h2>
+                    <div class="inib clear">
+                      <form id="liveSearchForm" onsubmit="return false;">
+  <input id="liveSearchInput" name="arama" type="text"
+         placeholder="Search"
+         value=""
+         autocomplete="off">
+</form>
+
+                    </div>
+                    <div class="aramasonuclari"></div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+        <div class="menu-ac MOBILE js_menu_ac" rel="sc-menu"><i class="fa fa-bars menu-icon-side" aria-hidden="true"></i></div>
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+    <div class="clear xxx"><div class="clear yyy">
+
+
+
+<div class="DARSLIDER  ">
+    <div class="owl-carousel owl-theme OLW-ONE rad-10 scroll animated" animasyon="fadeInDown">
+                    <div class="li hidden">
+
+                
+                <div class="COMPUTER">
+                    <img class="owl-lazy" data-src="_dir/clinic/resimler/s-clinic_ss1-2026-06-18-052355-52.jpg" alt="hair restoration, non-surgical hair loss treatment, regenerative hair therapy, hair loss clinic Istanbul, S Clinic, biopeptide hair treatment, skin rejuvenation, hair transplant alternative">
+                </div>
+
+                <div class="MOBILE">
+                    <img class="owl-lazy" data-src="_dir/clinic/resimler/s-clinic_homecd-2026-06-10-081021-4.png" alt="hair restoration, non-surgical hair loss treatment, regenerative hair therapy, hair loss clinic Istanbul, S Clinic, biopeptide hair treatment, skin rejuvenation, hair transplant alternative">
+                </div>
+
+                <div class="text  COMPUTER flex-center-strec">
+                    <div class="content-3 ">
+                        <div class="content">
+                           <p><img alt="" src="_dir/clinic/resimler/20260315030606.svg" style="width:550px" /></p>
+
+<h2>WE DON&#039;T TRANSPLANT. WE RESTORE.</h2>
+
+<p>S&#039;Clinic uses patented biological therapies to address hair loss at its source.</p>
+
+<p><a href="./information-appointment">BOOK YOUR CONSULTATION</a></p> 
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+</div></div></div><div class="clear "><div class="clear article"> 
+<div id="scroll">
+<p><img alt="" src="_dir/clinic/resimler/20260315113406.jpg" style="width:100%" /></p></div>
+ 
+
+ </div></div><div class="clear pad-y-100 site-font-xl color-tema  tema-A letter-1"><div class="clear max-800 margin-auto _mb-pad-x-20"> 
+<div id="scroll">
+<h2 style="text-align:center">THE FUTURE OF HAIR SCIENCE. TODAY.</h2>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">S&#39;Clinic has pioneered regenerative hair our treatment process in Türkiye, offering a scientifically advanced alternative to hair transplantation.</p>
+
+<p style="text-align:center">Our patented formula helps reactivate dormant hair follicles and support natural hair growth. Our personalised treatment protocol is the non-surgical alternative to hair transplantation.</p>
+
+<p style="text-align:center"><a href="./information-appointment">BOOK YOUR CONSULTATION</a></p>
+</div>
+ 
+
+ </div></div><div class="clear tema-B _mb-pad-20 letter-3"><div class="clear site-font-xl   pad-y-40"> 
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+<div class="full-kutu  _mb-pad-10 relative">
+
+
+  
+  
+    <div class="tablo clear flex-center-strec  flex-reverse">
+
+ 
+        <div class="tb-5">
+            <div class="img-tam  ">
+                	<img class="lazy" data-original="_dir/clinic/resimler/s-clinic_full-kutu-1-2026-06-10-091244-7.jpg" />
+        
+       
+            </div>
+        </div>
+
+
+        <div class="tb-7 pad-x-40 _mb-pad-x-0">
+        
+            <div class="max-700 article-xs  margin-auto">
+                <h2 style="text-align:center">OUR TREATMENT PROCESS</h2>
+
+<p style="text-align:center">ROOTED IN SCIENCE. DESIGNED FOR RESULTS.</p>
+
+<p style="text-align:center">Our patented treatment protocol combines regenerative science and clinical expertise to address hair loss at its source.</p>
+
+<p style="text-align:center"><a href="./our-scientific-approach">LEARN MORE</a></p>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+ 
+
+
+ </div></div><div class="clear tema-E pad-50 wh-60"><div class="clear content site-font-xl letter-4 _mb-pad-x-20"> 
+<div id="scroll">
+<h2 style="text-align:center">&nbsp;</h2>
+
+<h2 style="text-align:center">REAL TRANSFORMATION.<br />
+NATURAL RESULTS.</h2>
+
+<h3 style="text-align:center">OVER 20,000 SUCCESSFUL TREATMENT&nbsp;SESSIONS</h3>
+
+<h3 style="text-align:center"><br />
+&nbsp;</h3>
+
+<p style="text-align:center"><a href="./nformation-appointment">BOOK YOUR CONSULTATION</a></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
+</div>
+ 
+
+ </div></div>
+
+
+
+
+
+ 
+
+
+     
+
+    <footer>
+
+
+    <div class="footer-header">
+            </div>
+
+        <div class="clear tablo col-3 content-fx footer-logo-x">
+
+                            <div class="colon"> 
+                    <ul>
+
+<img src="_dir/clinic/resimler/20260315030552.svg" alt="Logo" class="logo">
+
+
+                       
+
+                                                    <li><a href="s-clinic-ea">ABOUT US</a></li>
+                                                    <li><a href="our-scientific-approach">OUR SCIENTIFIC APPROACH</a></li>
+                                                    <li><a href="our-process">OUR PROCESS</a></li>
+                                                    <li><a href="locations">LOCATIONS</a></li>
+                                            </ul>
+                </div>
+                            <div class="colon"> 
+                    <ul>
+
+<img src="_dir/clinic/resimler/20260315030552.svg" alt="Logo" class="logo">
+
+
+                       
+
+                                                    <li><a href="terms-and-conditions">TERMS AND CONDITIONS</a></li>
+                                                    <li><a href="return-refund-policy">REFUNDS AND MEDICAL DISCLAIMER</a></li>
+                                                    <li><a href="privacy-policy">PRIVACY POLICY</a></li>
+                                            </ul>
+                </div>
+            
+
+
+            <div class="colon t-center">
+                <ul>
+                    <h3>FOLLOW US</h3>
+                    <li class="footer-follow-icons">
+                        <a target="_blank" href="https://www.instagram.com/sclinicuae/" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/sclinicuae" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/sclinicuae/" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+
+    </footer>
+
+
+
+    <div class="enalt">
+        <div class="logo-gr">
+            <p style="text-align:center">S&rsquo;Clinic &mdash; Dubai, United Arab Emirates</p><p style="text-align:center">Unit 16, Souk Al Manzil, Downtown Dubai, UAE</p><p style="text-align:center">Copyright &copy; 2026 S&rsquo;Clinic</p>            <div class="footer-social">
+                <a target="_blank" href="https://www.instagram.com/sclinicuae/" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.facebook.com/sclinicuae" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/sclinicuae/" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+ 
+
+    <div class="WP-NEW rad">
+        <i class="fa fa-commenting-o _ackapat" rel="ikon-buton" aria-hidden="true"></i>
+
+        <div class="ikon-buton">
+            <div class="wp-ara" onclick="window.location.href='https://wa.me/+971586767298?text=Hello, I would like to get information'"><i class="fa i-1 fa-whatsapp" aria-hidden="true"></i></div>
+            <div class="wp-ara" onclick="window.location.href='tel:+971586767298'"><i class="fa i-2 fa-phone" aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="UYARIBOX">
+        <div class="uyari-a">
+            <div class="loaderX"></div>
+            <div class="mesaj"></div>
+        </div>
+    </div>
+    <div class="UYARIBOX-2">
+        <div class="uyari-a-2">
+            <div class="uyari-kapat"><i class="fa fa-times"></i></div>
+            <div class="mesaj-2"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src='_dir/clinic/js/zoom/jquery.zoom.js'></script>
+
+    <!--///////////////////////////////////////////////////////////////////////////////-->
+    <link rel="stylesheet" type="text/css" href="_dir/clinic/js/alibox/lightbox/themes/facebook/jquery.lightbox.css" />
+    <script type="text/javascript" src="_dir/clinic/js/alibox/lightbox/jquery.lightbox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.lightbox').lightbox();
+        });
+    </script>
+    <script src="_dir/clinic/js/tarih/jquery-ui.js"></script>
+    <link rel="stylesheet" href="_dir/clinic/js/tarih/jquery-ui.css">
+    <!--///////////////////////////////////////////////////////////////////////////////-->
+
+    <script src="_dir/clinic/js/olw-3/owl.carousel.js"></script>
+    <script src="_dir/clinic/js/aliaygir.js?v=1.28"></script>
+    <script src="sistem/js/scroll.js"></script>
+    <script src="_dir/clinic/js/jquery.lazyload.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".lazy").lazyload({
+                effect: "fadeIn"
+            });
+        });
+    </script>
+
+
+<script>
+(() => {
+  const input = document.getElementById('liveSearchInput');
+  const resultsBox = document.querySelector('.aramasonuclari');
+
+  let timer = null;
+  let lastController = null;
+
+  function escapeHtml(str) {
+    return (str || '').replace(/[&<>"']/g, m => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    }[m]));
+  }
+
+  async function doSearch(q) {
+    if (lastController) lastController.abort();
+    lastController = new AbortController();
+
+    const url = 'liveSearch.php?q=' + encodeURIComponent(q);
+
+    try {
+      const res = await fetch(url, { signal: lastController.signal });
+      const html = await res.text();
+      resultsBox.innerHTML = html;
+    } catch (e) {
+      if (e.name !== 'AbortError') {
+        resultsBox.innerHTML = '';
+      }
+    }
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+
+    clearTimeout(timer);
+
+    if (q.length < 2) { // 1 harfte aramasın istersen
+      resultsBox.innerHTML = '';
+      return;
+    }
+
+    timer = setTimeout(() => doSearch(q), 250);
+  });
+})();
+</script>
+
+
+
+
+
+
+    <!-- MINI CART PANEL -->
+    <div class="mini-cart-overlay" onclick="toggleMiniCart()"></div>
+    <div class="mini-cart-panel" id="miniCartPanel">
+        <div class="mini-cart-close" onclick="toggleMiniCart()"><i class="fa fa-times"></i></div>
+        <div class="mini-cart-header">
+            <h2>MY CART</h2>
+            <a href="./sepetim" class="go-cart">GO TO CART</a>
+        </div>
+        <div class="mini-cart-items" id="miniCartItems">
+            <!-- Items will be loaded here via AJAX -->
+            <div style="text-align: center; padding-top: 50px;">Loading...</div>
+        </div>
+    </div>
+    <!-- MINI CART PANEL END -->
+
+</body>
+
+</html> 
