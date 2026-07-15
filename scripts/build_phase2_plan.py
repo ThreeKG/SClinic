@@ -414,11 +414,11 @@ def page1(c: canvas.Canvas):
     cur_top = PAGE_H - 57 * mm
     gap = 5 * mm
     full_w = PAGE_W - 2 * M
-    for heading, lines, accent, cols in PAGE1_SECTIONS:
+    for heading, lines, accent, cols in PAGE1_SECTIONS[:4]:
         h = draw_card_auto(c, M, cur_top, full_w, heading, lines, accent, cols=cols)
         cur_top -= h + gap
 
-    footer(c, 1, 2)
+    footer(c, 1, 3)
 
 
 def page2(c: canvas.Canvas):
@@ -432,11 +432,30 @@ def page2(c: canvas.Canvas):
     cur_top = PAGE_H - 45 * mm
     gap = 5 * mm
     full_w = PAGE_W - 2 * M
-    for heading, lines, accent, cols in PAGE2_SECTIONS:
+    page2_sections = [PAGE1_SECTIONS[4], PAGE1_SECTIONS[5], PAGE2_SECTIONS[0], PAGE2_SECTIONS[1]]
+    for heading, lines, accent, cols in page2_sections:
         h = draw_card_auto(c, M, cur_top, full_w, heading, lines, accent, cols=cols)
         cur_top -= h + gap
 
-    footer(c, 2, 2)
+    footer(c, 2, 3)
+
+
+def page3(c: canvas.Canvas):
+    c.setFillColor(colors.white)
+    c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
+    title(c, 'Phase 2 delivery details')
+    c.setFillColor(hexcolor('#4A5668'))
+    c.setFont('Helvetica', 9.2)
+    c.drawString(M, PAGE_H - 31 * mm, 'Work phases, deliverables, and success criteria for the final redesign package.')
+
+    cur_top = PAGE_H - 45 * mm
+    gap = 5 * mm
+    full_w = PAGE_W - 2 * M
+    for heading, lines, accent, cols in PAGE2_SECTIONS[2:]:
+        h = draw_card_auto(c, M, cur_top, full_w, heading, lines, accent, cols=cols)
+        cur_top -= h + gap
+
+    footer(c, 3, 3)
 
 
 def build(path: Path = PDF_PATH):
@@ -444,6 +463,8 @@ def build(path: Path = PDF_PATH):
     page1(c)
     c.showPage()
     page2(c)
+    c.showPage()
+    page3(c)
     c.showPage()
     c.save()
 
