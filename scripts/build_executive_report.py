@@ -131,8 +131,8 @@ def hexcolor(value: str):
     return colors.HexColor(value)
 
 
-def draw_paragraph(c: canvas.Canvas, text: str, x: float, y_top: float, width: float, style='Body') -> float:
-    para = p(text, style)
+def draw_paragraph(c: canvas.Canvas, text: str, x: float, y_top: float, width: float, style='Body', bullet_text: str | None = None) -> float:
+    para = Paragraph(text, styles[style], bulletText=bullet_text)
     w, h = para.wrap(width, PAGE_H)
     para.drawOn(c, x, y_top - h)
     return h
@@ -168,7 +168,34 @@ def metric_card(c: canvas.Canvas, x: float, y: float, w: float, h: float, label:
     c.roundRect(x, y + h - 6, w, 6, 12, fill=1, stroke=0)
     draw_paragraph(c, label.upper(), x + 8, y + h - 13, w - 16, 'MetricLabel')
     draw_paragraph(c, value, x + 8, y + h - 25, w - 16, 'MetricValue')
-    draw_paragraph(c, note, x + 8, y + 8, w - 16, 'BodySmall')
+    draw_paragraph(c, note, x + 8, y + 14, w - 16, 'BodySmall')
+
+
+def draw_text_box(
+    c: canvas.Canvas,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    title: str | None,
+    body_lines: list[str],
+    *,
+    fill=WHITE,
+    stroke=BORDER,
+    title_style: str = 'CardTitle',
+    body_style: str = 'Body',
+    line_gap: float = 1.5 * mm,
+    top_pad: float = 10,
+    side_pad: float = 8,
+):
+    draw_box(c, x, y, w, h, fill=fill, stroke=stroke, radius=12)
+    cur_top = y + h - top_pad
+    if title:
+        th = draw_paragraph(c, title, x + side_pad, cur_top, w - 2 * side_pad, title_style)
+        cur_top -= th + 2
+    for line in body_lines:
+        bh = draw_paragraph(c, line, x + side_pad, cur_top, w - 2 * side_pad, body_style)
+        cur_top -= bh + line_gap
 
 
 def callout_card(c: canvas.Canvas, x: float, y: float, w: float, h: float, title: str, body: str, accent: str = TEAL, dark: bool = False):
@@ -218,9 +245,9 @@ def page1(c: canvas.Canvas):
     draw_paragraph(c, 'Prepared for client presentation and rebuild decision-making.', M, PAGE_H - 50 * mm, CONTENT_W * 0.65, 'Body')
     card_w = (CONTENT_W - 16 * mm) / 3
     y = 55 * mm
-    metric_card(c, M, y, card_w, 36 * mm, 'Performance', '0.71 / 0.65', 'Lighthouse scores', TEAL)
-    metric_card(c, M + card_w + 8 * mm, y, card_w, 36 * mm, 'Security', 'No hardening baseline', 'Legacy stack and weak public posture', RED)
-    metric_card(c, M + (card_w + 8 * mm) * 2, y, card_w, 36 * mm, 'Recommendation', 'Rebuild', 'The current stack is costly to patch', GOLD)
+    metric_card(c, M, y, card_w, 38 * mm, 'Performance', '0.71 / 0.65', 'Lighthouse score baseline', TEAL)
+    metric_card(c, M + card_w + 8 * mm, y, card_w, 38 * mm, 'Security', 'No hardening baseline', 'Legacy stack / weak posture', RED)
+    metric_card(c, M + (card_w + 8 * mm) * 2, y, card_w, 38 * mm, 'Recommendation', 'Rebuild', 'Patch limits the return', GOLD)
     footer(c, 1)
 
 
@@ -233,17 +260,27 @@ def page2(c: canvas.Canvas):
     right_w = PAGE_W - M - right_x
     summary = (
         'Both sites are functional, but the evidence points to the same pattern: a legacy PHP/Plesk stack, '
-        'heavy client-side dependencies, repeated homepage content, and avoidable performance and accessibility debt. '
-        'The sites are operating, but they are not yet at the standard expected for a premium healthcare brand.'
+        'heavy client-side dependencies, repeated homepage content, and avoidable performance and accessibility debt.'
     )
-    draw_box(c, M, 210 * mm, left_w, 42 * mm, fill=LIGHT, stroke=BORDER, radius=12)
-    draw_paragraph(c, summary, M + 8, PAGE_H - 52 * mm, left_w - 16, 'Body')
-    bullet_list(c, [
-        'Legacy stack: nginx + PHP/7.4.33 + PleskLin',
-        'Same JavaScript exception on both homepages',
-        'The .ae sitemap still contains Turkish legacy URLs',
-        'Lighthouse reports layout shifts, unused JS, and cache waste',
-    ], M + 2, PAGE_H - 84 * mm, left_w - 8)
+    draw_text_box(
+        c,
+        M,
+        205 * mm,
+        left_w,
+        54 * mm,
+        None,
+        [
+            summary,
+            '• Legacy stack: nginx + PHP/7.4.33 + PleskLin',
+            '• Same JavaScript exception on both homepages',
+            '• The .ae sitemap still contains Turkish legacy URLs',
+            '• Lighthouse reports layout shifts, unused JS, and cache waste',
+        ],
+        fill=LIGHT,
+        body_style='BodySmall',
+        line_gap=1.2 * mm,
+        top_pad=12,
+    )
 
     callout_card(c, right_x, 207 * mm, right_w, 48 * mm, 'Decision', 'Proceed with a rebuild rather than layering more fixes onto the current stack.', accent=GOLD)
     callout_card(c, right_x, 154 * mm, right_w, 48 * mm, 'Commercial implication', 'A cleaner rebuild gives the team a better platform for conversions, localization, and SEO growth.', accent=TEAL)
@@ -278,9 +315,9 @@ def page3(c: canvas.Canvas):
     c.setFillColor(hexcolor(WHITE))
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     title(c, 'Evidence snapshot')
-    metric_card(c, M, 215 * mm, 55 * mm, 30 * mm, 'Runtime bug', '2x', 'Same JS exception in aliaygir.js', RED)
-    metric_card(c, M + 60 * mm, 215 * mm, 55 * mm, 30 * mm, 'Hidden waste', '1.9–2.2 MiB', 'Cache savings reported by Lighthouse', GOLD)
-    metric_card(c, M + 120 * mm, 215 * mm, 55 * mm, 30 * mm, 'Layout shifts', '15', 'Both homepages trigger instability', TEAL)
+    metric_card(c, M, 215 * mm, 55 * mm, 32 * mm, 'Runtime bug', '2x', 'JS exception on homepages', RED)
+    metric_card(c, M + 60 * mm, 215 * mm, 55 * mm, 32 * mm, 'Hidden waste', '1.9–2.2 MiB', 'Lighthouse cache savings', GOLD)
+    metric_card(c, M + 120 * mm, 215 * mm, 55 * mm, 32 * mm, 'Layout shifts', '15', 'Homepage instability', TEAL)
 
     draw_paragraph(c, 'Technical profile', M, 182 * mm, 82 * mm, 'DocSection')
     bullet_list(c, [
@@ -330,9 +367,19 @@ def page4(c: canvas.Canvas):
     c.setFillColor(hexcolor(LIGHT))
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     title(c, 'Recommendation and roadmap')
-    draw_box(c, M, 194 * mm, CONTENT_W, 35 * mm, fill=WHITE, stroke=BORDER, radius=12)
-    draw_paragraph(c, 'Recommended architecture', M + 8, PAGE_H - 46 * mm, CONTENT_W - 16, 'DocSection')
-    draw_paragraph(c, 'Modern CMS + reusable component system + CDN-backed hosting + structured local SEO + analytics governance.', M + 8, PAGE_H - 58 * mm, CONTENT_W - 16, 'Body')
+    draw_text_box(
+        c,
+        M,
+        194 * mm,
+        CONTENT_W,
+        35 * mm,
+        'Recommended architecture',
+        ['Modern CMS + reusable component system', 'CDN-backed hosting + structured local SEO + analytics governance.'],
+        fill=WHITE,
+        body_style='Body',
+        line_gap=1.2 * mm,
+        top_pad=11,
+    )
 
     draw_paragraph(c, 'Suggested delivery roadmap', M, 172 * mm, CONTENT_W, 'DocSection')
     gap = 4 * mm
@@ -371,14 +418,24 @@ def page5(c: canvas.Canvas):
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     title(c, 'Next steps')
 
-    draw_box(c, M, 150 * mm, 88 * mm, 80 * mm, fill=LIGHT, stroke=BORDER, radius=12)
-    draw_paragraph(c, 'Immediate actions', M + 8, PAGE_H - 45 * mm, 72 * mm, 'DocSection')
-    bullet_list(c, [
-        'Approve the rebuild direction and scope.',
-        'Map current pages to the new content model.',
-        'Prioritize URLs that must preserve search equity.',
-        'Prepare design and development kickoff materials.',
-    ], M + 8, PAGE_H - 54 * mm, 72 * mm)
+    draw_text_box(
+        c,
+        M,
+        150 * mm,
+        88 * mm,
+        80 * mm,
+        'Immediate actions',
+        [
+            '• Approve the rebuild direction and scope.',
+            '• Map current pages to the new content model.',
+            '• Prioritize URLs that must preserve search equity.',
+            '• Prepare design and development kickoff materials.',
+        ],
+        fill=LIGHT,
+        body_style='Body',
+        line_gap=1.5 * mm,
+        top_pad=12,
+    )
 
     draw_box(c, M + 98 * mm, 150 * mm, CONTENT_W - 98 * mm, 80 * mm, fill=DARK, stroke=DARK, radius=12)
     c.setFillColor(hexcolor(GOLD))
