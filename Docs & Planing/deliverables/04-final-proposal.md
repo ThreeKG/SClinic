@@ -1,352 +1,89 @@
-# SClinic Website Rebuild Proposal
-
-**Prepared from:** `deliverables/01-technical-audit-report.md`
-
-**Business goal:** Replace the legacy, hard-to-maintain website stack with a modern healthcare web platform that is faster, more secure, easier to manage, and more effective at converting visitors into consultations.
-
----
-
-## Executive Summary
-
-The audit shows a strong business case for a rebuild rather than incremental patching. Both sites share the same legacy technical foundation, runtime bugs, poor performance efficiency, accessibility defects, and a dense homepage structure that obscures the primary call to action.
-
-A rebuild will deliver:
-
-- faster pages and better Core Web Vitals
-- cleaner Turkish / English market separation
-- a more trustworthy healthcare UX
-- stronger SEO foundations
-- better security defaults
-- easier content management for internal teams
-
----
-
-## 1) Existing problems
-
-### Proof-backed issues
-
-1. **Legacy stack** — both sites run on `nginx + PHP/7.4.33 + PleskLin` with old jQuery-era assets.
-2. **Runtime bug** — Lighthouse found a JS exception in `aliaygir.js` on both sites.
-3. **Performance waste** — unused JS, cache inefficiency, image delivery inefficiency, and layout shifts are all material.
-4. **UX clutter** — repeated hero slides and duplicated CTAs weaken message clarity.
-5. **Accessibility gaps** — missing landmarks, alt text, button names, contrast issues, and link labeling issues.
-6. **Localization drift** — the `.ae` sitemap still contains Turkish legacy routes.
-
-### Business impact
-
-These issues reduce trust, reduce consultation conversion potential, and make updates more expensive than they should be.
-
----
-
-## 2) Proposed solution
-
-Build a modern, component-based healthcare website platform with:
-
-- a clean content model
-- a reusable design system
-- localized Turkish / English experiences
-- clear booking and consultation funnels
-- SEO-safe page templates
-- performance budgets and accessibility standards baked in
-
-The solution should be designed as a maintainable platform, not a one-off brochure site.
-
----
-
-## 3) Recommended technology stack
-
-### CMS recommendation
-
-**Recommended:** WordPress with a custom block/theme architecture or a headless CMS if the team can support it.
-
-**Why:**
-
-- the business likely needs frequent content updates
-- editorial speed matters for clinics and locations
-- multilingual content is required
-- SEO and landing page creation need to stay flexible
-
-If the client already relies on WordPress workflows, use a custom WordPress implementation with strict performance and component standards rather than a page-builder-heavy setup.
-
-### Frontend recommendation
-
-- semantic HTML
-- modern CSS architecture
-- minimal JavaScript
-- component-based UI system
-- no old jQuery dependency for primary UI behavior
-
-### Hosting recommendation
-
-- managed hosting or a well-tuned cloud environment
-- CDN enabled
-- image optimization pipeline
-- object caching / page caching where appropriate
-- automated backups and rollback support
-
-### Analytics recommendation
-
-- Google Analytics 4
-- Google Tag Manager with governance
-- conversion events for consultation lead actions
-- consent-aware tracking if required by market/legal constraints
-
----
-
-## 4) Suggested architecture
-
-### Page model
-
-- Home
-- About
-- Scientific Approach
-- Treatment / Process pages
-- Locations / Clinics
-- Blog / Knowledge center
-- FAQ
-- Contact / Consultation
-- Legal pages
-
-### Content architecture
-
-- one shared design system
-- locale-specific copy and routing
-- location templates with structured data
-- blog templates optimized for search intent
-- CTA components reused consistently across the site
-
-### Functional approach
-
-- primary CTA: Book consultation
-- secondary CTA: Learn more / contact / locations
-- location-specific conversion paths
-- clear trust blocks for medical credibility and patient reassurance
-
----
-
-## 5) Feature list
-
-### Core features
-
-- consultation booking CTA system
-- clinic/location pages
-- services / treatments pages
-- FAQ module
-- blog / educational content area
-- before/after or testimonial module if legally appropriate
-- lead capture forms
-- call / WhatsApp / contact actions
-- multilingual routing
-- analytics events
-
-### Optional features
-
-- patient journey content blocks
-- downloadable treatment guide
-- structured schema for locations and articles
-- chatbot / support integration if truly needed
-
----
-
-## 6) Functional requirements
-
-- Users can find consultation actions within the first screen.
-- Users can identify services, locations, and trust signals quickly.
-- Editors can update content without code changes.
-- Each locale can have separate metadata and URLs.
-- Pages must be responsive and accessible by default.
-- Core pages should be lightweight and cacheable.
-
----
-
-## 7) Non-functional requirements
-
-- target strong Core Web Vitals
-- accessible to WCAG 2.1 AA standards where feasible
-- secure by default with hardened headers and cookies
-- search-friendly URL structure
-- maintainable and version-controlled components
-- fast image delivery and caching
-- zero dependence on legacy JS for basic browsing
-
----
-
-## 8) SEO strategy
-
-### Must-haves
-
-- clean metadata templates
-- canonical tags
-- per-locale sitemap strategy
-- structured data for organization, clinic/location, and articles
-- fast mobile performance
-- internal linking plan
-- content clusters for treatment education
-
-### Migration note
-
-The rebuild must preserve or intentionally redirect existing ranking URLs. The `.ae` legacy Turkish routes should be reviewed carefully so they either map to the right English equivalents or are retired with proper redirects.
-
----
-
-## 9) Security strategy
-
-- add a security header baseline
-- use secure, modern cookie flags
-- eliminate unnecessary third-party scripts
-- remove legacy libraries where possible
-- keep dependencies current
-- set up backups and rollback procedures
-- review forms and lead capture for spam protection
-
----
-
-## 10) Performance strategy
-
-- reduce JS payloads
-- remove old jQuery/plugin dependencies where possible
-- use modern image formats and responsive images
-- defer non-critical scripts
-- implement caching correctly
-- minimize layout shift by reserving image and component dimensions
-- create a performance budget for each template
-
----
-
-## 11) Accessibility strategy
-
-- semantic landmarks
-- proper heading hierarchy
-- descriptive link and button text
-- alt text standards
-- visible focus states
-- sufficient color contrast
-- keyboard-friendly navigation
-- mobile touch-target sizing
-
----
-
-## 12) Analytics strategy
-
-- define conversion events before launch
-- track consultation CTA clicks
-- track form starts and form submits
-- track phone and messaging clicks
-- track location-page engagement
-- keep tag governance documented so marketing changes do not break UX
-
----
-
-## 13) Migration plan
-
-### Phase 1: Discovery and content audit
-
-- inventory current pages, routes, and assets
-- decide which URLs must be preserved
-- define the new content model
-- map the Turkish and English site structures
-
-### Phase 2: Design system and IA
-
-- design reusable components
-- establish visual hierarchy and CTA rules
-- finalize mobile-first layouts
-
-### Phase 3: Build
-
-- implement templates
-- migrate core content
-- configure forms and analytics
-- implement SEO and accessibility foundations
-
-### Phase 4: QA and launch
-
-- run browser QA
-- verify redirects
-- validate forms, analytics, and performance
-- launch with rollback plan
-
-### Phase 5: Post-launch stabilization
-
-- monitor errors, rankings, and conversions
-- fix edge cases
-- optimize based on real usage
-
----
-
-## 14) Risks
-
-| Risk | Mitigation |
+# S'CLINIC UAE Website Proposal
+
+This proposal outlines a two-phase approach for the S'CLINIC UAE website. The first phase focuses on stabilising the existing website for launch. The second phase develops a new premium digital experience supported by a refreshed brand identity, scalable content management and selected patient-journey integrations.
+
+The project is structured to protect the immediate launch timeline while creating a clear path toward a stronger regional platform. Advanced product features that go beyond a standard website build are presented separately so they can be evaluated, prioritised and priced independently.
+
+## Project Overview
+
+| Project Phase | Purpose | Indicative Timeline | Cost (AED) |
+|---|---|---:|---:|
+| Phase 1 | Stabilise the current UAE website for launch, improve the consultation journey and resolve urgent content, UX, SEO, tracking and technical issues. | 10 working days | TBC |
+| Phase 2 | Create a refreshed brand identity and a complete new website with scalable CMS architecture and selected booking, CRM, WhatsApp and analytics integrations. | 12-16 weeks | TBC |
+| Advanced Modules | Optional custom digital products such as a bespoke booking engine, patient portal, clinic dashboard, AI qualification, loyalty and online payments. | Scoped separately | TBC |
+
+## Phase 1: UAE Website Launch Stabilisation
+
+The objective of Phase 1 is to improve the current website so it is credible, functional and ready to support the Dubai clinic launch. Workstreams will overlap where possible to stay within the two-week delivery window.
+
+| Service | Description | Timeline | Cost (AED) |
+|---|---|---:|---:|
+| Website access and technical review | Review the CMS, hosting, website structure, forms, analytics and technical limitations. Confirm what can realistically be completed before launch. | Days 1-2 | TBC |
+| Launch scope and priority planning | Identify the pages, services, content and conversion actions required for launch. Classify tasks as critical, important or deferred. | Days 1-2 | TBC |
+| Content and copy refinement | Correct English, remove duplicated or incomplete content, and improve headlines, calls to action, clinic information and priority treatment copy. | Days 2-5 | TBC |
+| UX, UI and mobile improvements | Improve layout, spacing, typography, navigation, CTA visibility and responsive behaviour within the current website structure. | Days 3-6 | TBC |
+| Consultation and lead journey | Test and improve enquiry forms, WhatsApp links, telephone actions, form confirmations and lead delivery to the clinic team. | Days 3-9 | TBC |
+| Security and form protection | Resolve urgent security concerns, improve form protection and confirm that enquiries are delivered securely and reliably. | Days 2-5 | TBC |
+| SEO essentials | Improve page titles, meta descriptions, headings, redirects, canonical settings, image alt text and indexation basics. | Days 5-7 | TBC |
+| Performance optimisation | Compress and resize priority images, improve media loading and resolve major speed issues where technically possible. | Days 6-8 | TBC |
+| Analytics and campaign readiness | Confirm analytics, conversion tracking, advertising pixels and lead-source tracking for the performance marketing team. | Days 4-9 | TBC |
+| Quality assurance and launch support | Test priority pages across mobile and desktop, verify forms and contact actions, resolve critical errors and support launch. | Days 8-10 | TBC |
+
+## Phase 2: Brand Refresh, Website Redesign and Digital Patient Experience
+
+Phase 2 will create a premium and scalable UAE website that reflects the clinic's positioning, improves the patient journey and supports future expansion. The core build includes standard integrations with selected business systems where compatible APIs or approved connectors are available.
+
+| Service | Description | Timeline | Cost (AED) |
+|---|---|---:|---:|
+| Discovery and digital strategy | Define target audiences, patient needs, business objectives, UAE positioning, treatment priorities and conversion goals. | 1-2 weeks | TBC |
+| Brand identity refresh | Develop the visual direction, colour system, typography, image style, icon direction, layout rules and tone-of-voice guidance. | 2-3 weeks | TBC |
+| Website architecture and UX | Create the sitemap, user journeys, page hierarchy, treatment structure, navigation and consultation flow. | 2-3 weeks | TBC |
+| Content strategy and copywriting | Define messaging and rewrite the main website content, including homepage, treatments, expertise, doctors, consultation and trust content. | 3-5 weeks | TBC |
+| UI design and design system | Design the responsive website and create reusable components, forms, cards, CTAs, trust sections and content templates. | 3-4 weeks | TBC |
+| CMS and website development | Build the approved designs in a maintainable CMS with structured content for treatments, doctors, locations, FAQs and future markets. | 4-6 weeks | TBC |
+| Booking integration | Connect the website to the selected existing booking or appointment-management platform using available APIs or approved integration methods. | 2-4 weeks | TBC |
+| CRM and lead-routing integration | Send enquiries and booking data to the selected CRM or lead-management platform, including campaign source and patient interest where supported. | 1-3 weeks | TBC |
+| WhatsApp patient communication | Create structured WhatsApp contact flows, enquiry handover and approved automated confirmations where technically available. | 1-2 weeks | TBC |
+| Automated patient communication | Configure booking confirmations, reminders, follow-ups and internal notifications through the selected booking or CRM systems. | 2-3 weeks | TBC |
+| Analytics and conversion framework | Configure analytics, Tag Manager, advertising pixels, event tracking and reporting for forms, calls, WhatsApp and bookings. | 1-2 weeks | TBC |
+| SEO technical foundation | Implement metadata controls, structured URLs, schema, redirects, sitemap, indexation rules and scalable page templates. | 1-2 weeks | TBC |
+| Security, privacy and compliance | Configure secure forms, access permissions, backups, privacy notices, consent requirements and appropriate data-handling practices. | 1-2 weeks | TBC |
+| Testing, training and launch | Complete responsive, functional and integration testing, train the internal team and support deployment and launch. | 2 weeks | TBC |
+
+## Technical Approach
+
+The recommended setup is a maintainable, mobile-first website with structured content management and secure integrations. The final platform and integration method will be confirmed after reviewing the client's existing systems, internal capabilities and future expansion plans.
+
+| Technical Area | Proposed Approach |
 |---|---|
-| URL/ranking loss during migration | Redirect mapping, sitemap control, Search Console monitoring |
-| Content localization mistakes | Separate locale ownership and review workflow |
-| Reintroducing performance bloat | Performance budget and code review gates |
-| Form/lead tracking issues | Pre-launch analytics QA |
-| Scope creep | Freeze requirements before build phase |
+| Website platform | Use WordPress or another suitable CMS after evaluating maintainability, security, content management and scalability requirements. |
+| Content management | Create structured modules for treatments, doctors, locations, testimonials, FAQs, articles and future markets. |
+| Responsive development | Build mobile-first layouts optimised for smartphones, tablets and desktop screens. |
+| Booking | Integrate an existing booking platform where available. A custom booking engine requires separate scope and pricing. |
+| CRM | Connect website enquiries and booking data to the client's selected CRM using an API, webhook or supported connector. |
+| WhatsApp | Add tracked WhatsApp actions and structured communication flows, subject to the selected WhatsApp Business setup. |
+| Automation | Configure confirmation messages, reminders, internal notifications and follow-ups through the selected booking or CRM systems. |
+| Analytics | Implement GA4, Google Tag Manager, campaign attribution and conversion events for forms, calls, WhatsApp and bookings. |
+| Hosting and deployment | Use a staging environment, controlled deployment process, backups, SSL and appropriate server security. |
+| Administration | Provide CMS access, role-based permissions, documentation and basic training for the client team. |
 
----
+## Optional Advanced Modules
 
-## 15) Timeline
+These modules extend beyond the standard website build and should be evaluated, scoped and priced independently after the core platform and operational requirements are confirmed.
 
-A realistic delivery plan for a serious rebuild is:
+| Optional Module | Description | Additional Timeline | Cost (AED) |
+|---|---|---:|---:|
+| Custom booking engine | Bespoke appointment availability, scheduling, rescheduling, cancellations and staff or treatment allocation. | 6-12+ weeks | TBC |
+| Clinic management dashboard | Custom interface for managing enquiries, appointments, patient status and internal communication. | 6-12+ weeks | TBC |
+| AI-assisted enquiry qualification | Analyse incoming enquiries, classify treatment interest and recommend routing or follow-up actions. | 4-8+ weeks | TBC |
+| Patient portal | Secure patient login for appointments, forms, documents, communication and treatment information. | 8-16+ weeks | TBC |
+| Loyalty and retention system | Patient profiles, membership levels, rewards, follow-up campaigns and personalised offers. | 6-12+ weeks | TBC |
+| Online payments | Deposits, appointment payments, refunds and payment-status integration. | 2-5 weeks | TBC |
+| Multilingual and regional rollout | Arabic implementation and reusable templates for Turkey or other future markets. | 3-6 weeks per market | TBC |
 
-| Phase | Estimated duration |
-|---|---:|
-| Discovery / content inventory | 1–2 weeks |
-| IA / design system / UX | 2–3 weeks |
-| Development / integration | 4–8 weeks |
-| Content migration / SEO setup | 1–3 weeks |
-| QA / launch prep | 1–2 weeks |
-| Post-launch stabilization | 1–2 weeks |
+## Commercial and Delivery Notes
 
-**Total:** roughly 8–16 weeks depending on scope, approvals, and content readiness.
-
----
-
-## 16) Estimated effort
-
-This depends on whether the client wants:
-
-- a modest marketing-site rebuild, or
-- a fully structured, multilingual healthcare platform with reusable content and analytics governance.
-
-A reasonable delivery estimate should be finalized after the content inventory and sitemap mapping step.
-
----
-
-## 17) Assumptions
-
-- The client wants a premium healthcare presence, not a quick cosmetic refresh.
-- Existing content will be reused selectively, not copied blindly.
-- Both locales need a coordinated but not identical experience.
-- Consultation conversion is the primary business KPI.
-- Search visibility and trust are equally important outcomes.
-
----
-
-## 18) Recommendation
-
-Proceed with a rebuild in phases. The evidence shows that the current sites are already functioning, but they are carrying enough technical and UX debt that patching them will likely cost more over time than replacing the foundation properly.
-
----
-
-## 19) Success criteria
-
-The rebuild is successful if:
-
-- pages load faster and feel more stable
-- consultation CTAs are clearer and more prominent
-- accessibility failures are substantially reduced
-- the `.ae` site is cleanly localized
-- editors can manage content without developer help
-- SEO and analytics are easier to control
-
----
-
-## Appendix: Source files
-
-- `deliverables/01-technical-audit-report.md`
-- `notes/sclinic-com-tr.md`
-- `notes/sclinic-ae.md`
-- `evidence/sclinic.com.tr/performance/lighthouse.json`
-- `evidence/sclinic.ae/performance/lighthouse.json`
+- Phase 1 and Phase 2 should be priced independently.
+- Standard integrations are subject to the capabilities, access and licensing of the selected third-party systems.
+- Custom software products and advanced modules require separate discovery, technical validation, scope and commercial approval.
+- Timelines are indicative and depend on access, content readiness, feedback cycles, approvals and third-party integration availability.
