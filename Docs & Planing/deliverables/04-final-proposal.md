@@ -2,7 +2,7 @@
 
 This proposal outlines a two-phase approach for the S'CLINIC UAE website. The first phase focuses on stabilising the existing website for launch. The second phase develops a new premium digital experience supported by a refreshed brand identity, scalable content management and selected patient-journey integrations.
 
-The project is structured to protect the immediate launch timeline while creating a clear path toward a stronger regional platform. Advanced product features that go beyond a standard website build are presented separately so they can be evaluated, prioritised and priced independently.
+The project is structured to protect the immediate launch timeline while creating a clear path toward a stronger regional platform. Core website work is kept separate from optional advanced modules so scope, timing and cost stay clear.
 
 ## Project Overview
 
@@ -15,6 +15,8 @@ The project is structured to protect the immediate launch timeline while creatin
 ## Phase 1: UAE Website Launch Stabilisation
 
 The objective of Phase 1 is to improve the current website so it is credible, functional and ready to support the Dubai clinic launch. Workstreams will overlap where possible to stay within the two-week delivery window.
+
+Phase 1 should finish with the site stable enough for launch, with the main pages, forms, tracking and contact actions working correctly.
 
 | Service | Description | Timeline | Cost (AED) |
 |---|---|---:|---:|
@@ -31,7 +33,9 @@ The objective of Phase 1 is to improve the current website so it is credible, fu
 
 ## Phase 2: Brand Refresh, Website Redesign and Digital Patient Experience
 
-Phase 2 will create a premium and scalable UAE website that reflects the clinic's positioning, improves the patient journey and supports future expansion. The core build includes standard integrations with selected business systems where compatible APIs or approved connectors are available.
+Phase 2 will create a premium and scalable UAE website that reflects the clinic's positioning, improves the patient journey and supports future expansion. The core build includes standard integrations only where compatible APIs or approved connectors are available.
+
+Phase 2 should stay focused on the redesign and the core patient journey. Advanced items should stay outside the core build unless they are separately approved.
 
 | Service | Description | Timeline | Cost (AED) |
 |---|---|---:|---:|
@@ -50,9 +54,22 @@ Phase 2 will create a premium and scalable UAE website that reflects the clinic'
 | Security, privacy and compliance | Configure secure forms, access permissions, backups, privacy notices, consent requirements and appropriate data-handling practices. | 1-2 weeks | TBC |
 | Testing, training and launch | Complete responsive, functional and integration testing, train the internal team and support deployment and launch. | 2 weeks | TBC |
 
+## Proposal Guardrails
+
+| Area | Included in core scope | Not included in core scope |
+|---|---|---|
+| Website rebuild | Brand refresh, page redesign, design system, content structure and core patient journey | Separate product builds or custom software modules |
+| Integrations | Standard booking, CRM, WhatsApp and analytics integrations where existing APIs or connectors are available | Custom integrations that need new development or third-party negotiation |
+| Advanced features | None | Booking dashboard, patient portal, AI enquiry filtering, loyalty system, online payments and other advanced modules |
+| Languages | UAE website scope as approved | Arabic or other regional rollouts unless confirmed separately |
+| Delivery dependencies | Client access, content readiness, feedback cycles, approvals and third-party system availability | Items blocked by missing access, missing content or unavailable systems |
+| Approvals | Phase scope, platform direction and integration method should be approved before build starts | Any major scope change after build begins |
+
 ## Technical Approach
 
 The recommended setup is a maintainable, mobile-first website with structured content management and secure integrations. The final platform and integration method will be confirmed after reviewing the client's existing systems, internal capabilities and future expansion plans.
+
+The CMS and platform choice should be treated as a formal decision point before build starts, not as an open-ended assumption during development.
 
 | Technical Area | Proposed Approach |
 |---|---|
@@ -87,3 +104,4 @@ These modules extend beyond the standard website build and should be evaluated, 
 - Standard integrations are subject to the capabilities, access and licensing of the selected third-party systems.
 - Custom software products and advanced modules require separate discovery, technical validation, scope and commercial approval.
 - Timelines are indicative and depend on access, content readiness, feedback cycles, approvals and third-party integration availability.
+- If a major dependency is not available, the related work may need to shift to a later phase.
