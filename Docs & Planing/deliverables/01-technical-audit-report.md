@@ -1,4 +1,4 @@
-# Hermes Technical Audit Report
+# SClinic Technical Audit Report
 
 **Client scope:** `sclinic.com.tr` and `sclinic.ae`
 

@@ -1,4 +1,4 @@
-# Hermes Website Rebuild Proposal
+# SClinic Website Rebuild Proposal
 
 **Prepared from:** `deliverables/01-technical-audit-report.md`
 

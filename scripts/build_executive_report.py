@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 
-sys.path = [p for p in sys.path if '/.hermes/hermes-agent/venv/' not in p]
+sys.path = [p for p in sys.path if '/venv/' not in p]
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT, TA_RIGHT

@@ -1,10 +1,10 @@
 # IDEA.md
 
-# Hermes Project
+# SClinic Project
 
 ## Overview
 
-Hermes is a technical assessment and website modernization project.
+SClinic is a technical assessment and website modernization project.
 
 The initial objective is **not to develop a new website**, but to produce a comprehensive technical evaluation of the client's existing digital presence and use the findings to prepare a professional redevelopment proposal.
 
@@ -258,7 +258,7 @@ This proposal should be suitable for commercial presentation to the client.
 
 # Future Phases (If Approved)
 
-If the client accepts the proposal, Hermes will expand into the implementation project.
+If the client accepts the proposal, the project will expand into the implementation phase.
 
 Future documentation may include:
 
@@ -309,4 +309,4 @@ The project will be considered successful if:
 
 # Long-term Vision
 
-Hermes aims to produce a complete, evidence-driven foundation for a modern healthcare website platform. The technical audit and redevelopment proposal should serve as the single source of truth for all future planning, design, development, testing, deployment, and maintenance activities if the project proceeds.
+SClinic aims to produce a complete, evidence-driven foundation for a modern healthcare website platform. The technical audit and redevelopment proposal should serve as the single source of truth for all future planning, design, development, testing, deployment, and maintenance activities if the project proceeds.

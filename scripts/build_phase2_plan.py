@@ -4,8 +4,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
-# Avoid the Hermes venv Pillow build interfering with reportlab.
-sys.path = [p for p in sys.path if '/.hermes/hermes-agent/venv/' not in p]
+# Avoid the local Pillow build interfering with reportlab.
+sys.path = [p for p in sys.path if '/venv/' not in p]
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4

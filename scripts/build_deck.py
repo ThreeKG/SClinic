@@ -3,8 +3,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-# Avoid the Hermes venv Pillow build when importing python-pptx.
-sys.path = [p for p in sys.path if '/.hermes/hermes-agent/venv/' not in p]
+# Avoid the local Pillow build when importing python-pptx.
+sys.path = [p for p in sys.path if '/venv/' not in p]
 
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
@@ -119,7 +119,7 @@ def bullets(slide, items, x, y, w, h, size=12.5, color=SLATE):
 
 
 def footer(slide, page):
-    textbox(slide, 'Hermes | SClinic client deck', 0.35, 7.0, 4.8, 0.15, size=8.2, color=MUTED)
+    textbox(slide, 'SClinic client deck', 0.35, 7.0, 4.8, 0.15, size=8.2, color=MUTED)
     textbox(slide, f'{page}', 12.45, 7.0, 0.4, 0.15, size=8.2, color=MUTED, align=PP_ALIGN.RIGHT)
 
 

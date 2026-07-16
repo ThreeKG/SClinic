@@ -1,6 +1,6 @@
 # IDEA.md Implementation Plan
 
-> **For Hermes:** Use subagent-driven-development skill to implement this plan task-by-task.
+> **For this project:** Use subagent-driven-development skill to implement this plan task-by-task.
 
 **Goal:** Produce a client-ready technical audit of `https://www.sclinic.com.tr` and `https://www.sclinic.ae`, then turn the audit into a commercial redevelopment proposal.
 
@@ -35,7 +35,7 @@ Create the following files as the project matures:
 - Create: `deliverables/`
 - Create: `evidence/`
 - Create: `notes/`
-- Create: `.hermes/plans/2026-07-14_113414-idea-md-implementation-plan.md`
+- Create: `plans/2026-07-14_113414-idea-md-implementation-plan.md`
 
 **Step 1: Create the project folders**
 
